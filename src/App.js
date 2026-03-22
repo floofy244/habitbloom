@@ -1,23 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
+  const [text, setText] = useState("");
+  const [error, setError] = useState("");
+  const [habits, setHabits] = useState([]);
+
+  const addHabit = () => {
+    if (text.trim() !== ""){
+      const newHabit = {
+        id: Date.now(),
+        name: text,
+        completed: false,
+      };
+      
+      setHabits([...habits, newHabit]);
+      setText("");
+      setError("");
+    } else{
+      setError("please add a habit!")
+    }
+  };
+
+
+  const toggleHabit = (id) => {
+    const updatedHabits = habits.map((habit) =>
+      habit.id === id
+        ? {...habit, completed: !habit.completed}
+        : habit
+      );
+
+      setHabits(updatedHabits);
+  };
+
+
+  const deleteHabit = (id) => {
+    const filteredHabits = habits.filter((habit) => habit.id !==id);
+    setHabits(filteredHabits);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Habit Bloom 🌱</h1>
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
+      <button onClick={addHabit}>Add Habit</button>
+      <p>{error}</p>
+
+      <ul>
+        {habits.map((h) => (
+          <li key={h.id}>
+            <span style={{textDecoration: h.completed ? "line-through" : "none"}}>
+              {h.name}
+            </span>
+            <button onClick={() => toggleHabit(h.id)}>
+              {h.completed ? "Mark Incomplete" : "Mark Complete"}
+            </button>
+            <button onClick={() => deleteHabit(h.id)}>
+              Delete habit
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
