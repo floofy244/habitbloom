@@ -1,6 +1,48 @@
-# Getting Started with Create React App
+# Habit Bloom 🌱
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and intuitive habit tracking web application built with React. Help your habits grow and bloom by tracking them daily!
+
+## Features
+
+- **Add Habits**: Easily add new habits to track
+- **Mark Complete/Incomplete**: Toggle habits as completed or not
+- **Delete Habits**: Remove habits you no longer want to track
+- **Real-time Updates**: See changes instantly as you interact with the app
+- **Clean UI**: Simple and user-friendly interface
+
+## Technologies Used
+
+- React 18
+- JavaScript (ES6+)
+- CSS
+- Create React App
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/habit-bloom.git
+   cd habit-bloom
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+
+## Usage
+
+1. Enter a habit name in the input field
+2. Click "Add Habit" to add it to your list
+3. Use the "Mark Complete" / "Mark Incomplete" button to toggle habit status
+4. Use the "Delete habit" button to remove habits from your list
 
 ## Available Scripts
 
@@ -39,15 +81,19 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
 ### Analyzing the Bundle Size
 
